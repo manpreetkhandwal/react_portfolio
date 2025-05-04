@@ -44,7 +44,7 @@ const projects = [
     title: "Social Downloader",
     description: "A tool for downloading media from social platforms.",
     image: social,
-    link: "#",
+    link: "https://social-video-downloader-five.vercel.app/",
     technologies: ["React", "Tailwind CSS"],
     client: "Self-Project",
   },
