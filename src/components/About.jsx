@@ -3,7 +3,6 @@ import { IoPersonSharp } from "react-icons/io5";
 import about from "D:/React/portfolio/src/assets/about.png";
 import { Tilt } from 'react-tilt';
 import { motion } from "framer-motion";
-import bg from "D:/React/portfolio/src/assets/dynamic-colorful-low-poly-pattern-18gkntu79pw5pevs.jpg";
 import './About.css';
 
 function About() {

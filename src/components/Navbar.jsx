@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
-import logo from "D:/React/portfolio/src/assets/main.png";
+import logo from "./../assets/main.png";
 import ContactModal from "./ContactSection";
 
 function Navbar() {

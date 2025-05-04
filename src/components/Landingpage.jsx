@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import men from "D:/React/portfolio/src/assets/men.png";
+import men from "./../assets/men.png";
 import { motion } from "framer-motion";
 import ParticlesBack from "./ParticlesBack";
-import bg from "D:/React/portfolio/src/assets/dynamic-colorful-low-poly-pattern-18gkntu79pw5pevs.jpg";
+import bg from "./../assets/dynamic-colorful-low-poly-pattern-18gkntu79pw5pevs.jpg";
 import {
   FaFacebook,
   FaTwitter,

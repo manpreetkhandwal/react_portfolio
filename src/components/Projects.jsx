@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { SiPolymerproject } from "react-icons/si";
-import port from "D:/React/portfolio/src/assets/portfolio.png";
-import e_com from "D:/React/portfolio/src/assets/e-commerce.png";
-import ochi from "D:/React/portfolio/src/assets/ochi.png";
-import social from "D:/React/portfolio/src/assets/social.png";
-import inhance from "D:/React/portfolio/src/assets/inhance.png";
-import sign from "D:/React/portfolio/src/assets/sign.png";
-import translator from "D:/React/portfolio/src/assets/trans.png";
+import port from "./../assets/portfolio.png";
+import e_com from "./../assets/e-commerce.png";
+import ochi from "./../assets/ochi.png";
+import social from "./../assets/social.png";
+import inhance from "./../assets/inhance.png";
+import sign from "./../assets/sign.png";
+import translator from "./../assets/trans.png";
 
 const projects = [
   {
