@@ -1,0 +1,11 @@
+.name {
+    font-family: "Pacifico", serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+.bg{
+backdrop-filter: blur(2px);
+background-color: rgba(0, 0, 0, 0.462);
+}

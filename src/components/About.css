@@ -1,0 +1,5 @@
+#profile{
+    border-image: linear-gradient(to right,#d53abb, #9f3ad5 0%, #3a4ed5 100%) 1;
+    border-width: 3px;
+    border-style: solid;
+}
