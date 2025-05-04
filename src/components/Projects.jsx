@@ -9,6 +9,8 @@ import inhance from "./../assets/inhance.png";
 import sign from "./../assets/sign.png";
 import transltor from "./../assets/trans.png";
 import prep from "./../assets/prep.png";
+import compiler from "./../assets/compiler.png";
+
 
 const projects = [
   {
@@ -25,7 +27,7 @@ const projects = [
     description:
       "This is a brief description of Project Two, an e-commerce site built with React and integrated with a payment gateway.",
     image: e_com,
-    link: "#",
+    link: "https://emacore-cart.vercel.app/",
     technologies: ["React", "Node.js", "Stripe API"],
     client: "Self-Project",
   },
@@ -34,7 +36,7 @@ const projects = [
     description:
       "A front-end project developed using UI tech. This project highlights my front-end skills.",
     image: ochi,
-    link: "#",
+    link: "https://ochi-nine-psi.vercel.app/",
     technologies: ["React", "Tailwind CSS", "Framer Motion"],
     client: "Self-Project",
   },
@@ -58,16 +60,24 @@ const projects = [
     title: "Signature Generator",
     description: "A tool to generate custom signatures.",
     image: sign,
-    link: "#",
+    link: "https://signature-generator-six.vercel.app/",
     technologies: ["React", "Tailwind CSS"],
     client: "Self-Project",
   },
+  // {
+  //   title: "Language Translator",
+  //   description: "A web app to translate languages.",
+  //   image: transltor,
+  //   link: "#",
+  //   technologies: ["React", "Tailwind CSS"],
+  //   client: "Self-Project",
+  // },
   {
-    title: "Language Translator",
-    description: "A web app to translate languages.",
-    image: transltor,
-    link: "#",
-    technologies: ["React", "Tailwind CSS"],
+    title: "complier",
+    description: " A web app to compile code.",
+    image: compiler,
+    link: "https://compliler-git-main-manpreetkhandwals-projects.vercel.app/",
+    technologies: ["React", "Tailwind CSS", "Framer Motion"],
     client: "Self-Project",
   },
   {
@@ -101,7 +111,7 @@ const ProjectSection = () => {
             </span>
           </h2>
           <div className="grid gap-12 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {projects.map((project) => (
+            {projects.map((project, key) => (
               <motion.div
                 key={project.title}
                 className="rounded-lg overflow-hidden shadow-lg relative group bg-gradient-to-br from-indigo-600 to-blue-100"
@@ -131,12 +141,14 @@ const ProjectSection = () => {
                         <strong>Client:</strong> {project.client}
                       </li>
                     </ul>
-                    <a
-                      href={project.link}
-                      className="mt-4 inline-block px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-500 transition duration-300"
-                    >
-                      View Project
-                    </a>
+                    {key !== 0 && key !== 7 && (
+                      <a
+                        href={project.link}
+                        className="mt-4 inline-block px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-500 transition duration-300"
+                      >
+                        View Project
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.div>
