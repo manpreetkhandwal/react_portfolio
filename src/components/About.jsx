@@ -1,6 +1,6 @@
 import React ,{useState}from "react";
 import { IoPersonSharp } from "react-icons/io5";
-import about from "D:/React/portfolio/src/assets/about.png";
+import about from "./../assets/about.png";
 import { Tilt } from 'react-tilt';
 import { motion } from "framer-motion";
 import './About.css';
