@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { LiaExternalLinkSquareAltSolid } from "react-icons/lia";
 import {
   FaFacebook,
@@ -13,11 +13,25 @@ import { motion } from "framer-motion";
 import { FaMapLocationDot } from "react-icons/fa6";
 
 function Footer() {
-  const [show, setShow] = useState("hidden bg-zinc-800");
+  const [showFooter, setShowFooter] = useState(false);
+  const sectionRefs = useRef({});
 
-  setTimeout(() => {
-    setShow("flex bg-zinc-800");
-  }, 6000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowFooter(true);
+    }, 6000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  };
 
   const socialIcons = [
     { icon: FaFacebook, link: "https://facebook.com", color: "#0DAFFF" },
@@ -27,100 +41,90 @@ function Footer() {
     { icon: FaGithub, link: "https://github.com", color: "#332D2D" },
   ];
 
+  if (!showFooter) return null;
+
   return (
-    <div className={show}>
-      <div className="w-full h-auto max-h-screen bg-zinc-800 p-10">
-        <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Manpreet's Portfolio Section */}
+    <footer className="w-full bg-zinc-800 text-white">
+      <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Portfolio Section */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
+            transition={{ duration: 0.5 }}
             className="text-center md:text-left"
           >
-            <h1 className="text-[2vw] md:text-[2.5vw] font-bold mb-4">
-              Manpreet's Portfolio
-            </h1>
-            <p className="text-[1.5vw] md:text-[1.2vw] mb-5">
-              Thank you for visiting my personal portfolio website. Connect with
-              me over socials.
+            <h2 className="text-xl font-bold mb-4">Manpreet's Portfolio</h2>
+            <p className="mb-4 text-gray-300">
+              Thank you for visiting my personal portfolio website. Connect with me over socials.
             </p>
-            <p className="text-[1.5vw] md:text-[1.2vw]">
+            <p className="text-gray-300">
               Keep Rising 🚀. Connect with me over live chat!
             </p>
           </motion.div>
 
-          {/* Quick Links Section */}
+          {/* Quick Links */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="text-center md:text-left"
           >
-            <h1 className="text-[2vw] md:text-[2.5vw] font-bold mb-4">
-              Quick Links
-            </h1>
-            <div className="flex flex-col items-center md:items-start gap-2">
-              {[
-                "Home",
-                "About",
-                "Skills",
-                "Projects",
-                "Experience",
-                "Education",
-              ].map((item, index) => (
-                <motion.a
-                  href={`#${item.toLowerCase()}`}
+            <h2 className="text-xl font-bold mb-4">Quick Links</h2>
+            <div className="flex flex-col space-y-2">
+              {["home", "about", "skills", "projects", "experience", "education"].map((item, index) => (
+                <motion.button
                   key={index}
-                  className="text-md font-semibold flex items-center gap-2 transition-all hover:bg-gradient-to-br from-blue-600 via-purple-600 to-pink-700 text-white rounded p-1"
-                  whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+                  onClick={() => scrollToSection(item)}
+                  className="flex items-center justify-center md:justify-start gap-2 text-gray-300 hover:text-white transition-colors"
+                  whileHover={{ x: 5 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   <LiaExternalLinkSquareAltSolid />
-                  {item}
-                </motion.a>
+                  <span>{item.charAt(0).toUpperCase() + item.slice(1)}</span>
+                </motion.button>
               ))}
             </div>
           </motion.div>
 
-          {/* Contact Info Section */}
+          {/* Contact Info */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.5 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             className="text-center md:text-left"
           >
-            <h1 className="text-[2vw] md:text-[2.5vw] font-bold mb-4">
-              Contact Info
-            </h1>
-            <p className="text-[1.5vw] md:text-[1.2vw] text-md font-semibold flex items-center p-1">
-              <FaPhoneAlt />{" "}
-              <a href="tel:+91XXXXXXXXXX" className="ml-2">
-                +91XXXXXXXXXX
-              </a>
-            </p>
-            <p className="text-[1.5vw] md:text-[1.2vw] text-md font-semibold flex items-center p-1">
-              <IoMail />{" "}
-              <a href="mailto:manpreetmomian@gmail.com" className="ml-2">
-                manpreetmomian@gmail.com
-              </a>
-            </p>
-            <p className="text-[1.5vw] md:text-[1.2vw] text-md font-semibold flex items-center p-1">
-              <FaMapLocationDot /> <a >Delhi NCR, India</a> 
-            </p>
-            <div className="flex justify-center md:justify-start gap-8 mt-4">
+            <h2 className="text-xl font-bold mb-4">Contact Info</h2>
+            <div className="space-y-3">
+              <div className="flex items-center justify-center md:justify-start gap-2">
+                <FaPhoneAlt />
+                <a href="tel:+91XXXXXXXXXX" className="hover:underline">+91XXXXXXXXXX</a>
+              </div>
+              <div className="flex items-center justify-center md:justify-start gap-2">
+                <IoMail />
+                <a href="mailto:manpreetmomian@gmail.com" className="hover:underline">manpreetmomian@gmail.com</a>
+              </div>
+              <div className="flex items-center justify-center md:justify-start gap-2">
+                <FaMapLocationDot />
+                <span>Delhi NCR, India</span>
+              </div>
+            </div>
+            
+            <div className="flex justify-center md:justify-start gap-4 mt-6">
               {socialIcons.map((social, index) => {
-                const IconComponent = social.icon;
+                const Icon = social.icon;
                 return (
                   <motion.a
                     key={index}
                     href={social.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`text-4xl transition-colors duration-300`}
-                    whileHover={{scale: 1.2 }}
-                    style={{color:social.color}}
+                    className="text-2xl"
+                    style={{ color: social.color }}
+                    whileHover={{ y: -3, scale: 1.2 }}
+                    whileTap={{ scale: 0.9 }}
                   >
-                    <IconComponent />
+                    <Icon />
                   </motion.a>
                 );
               })}
@@ -128,15 +132,19 @@ function Footer() {
           </motion.div>
         </div>
 
-        {/* Footer Bottom Section */}
-        <div className="w-full flex flex-col items-center mt-10">
-          <hr className="w-[90%] md:w-[70%] border-t-2 border-gray-600 mb-4" />
-          <p className="text-[1.5vw] md:text-[1.8vw] text-center">
-            Designed with ❤️ by <b className="text-[#006FFF]">Manpreet Singh</b>
+        {/* Copyright */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="border-t border-gray-700 mt-8 pt-6 text-center"
+        >
+          <p className="text-gray-400">
+            Designed with ❤️ by <span className="text-blue-400 font-medium">Manpreet Singh</span>
           </p>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </footer>
   );
 }
 

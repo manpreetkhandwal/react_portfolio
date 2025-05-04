@@ -7,7 +7,8 @@ import ochi from "./../assets/ochi.png";
 import social from "./../assets/social.png";
 import inhance from "./../assets/inhance.png";
 import sign from "./../assets/sign.png";
-import translator from "./../assets/trans.png";
+import transltor from "./../assets/trans.png";
+import prep from "./../assets/prep.png";
 
 const projects = [
   {
@@ -64,9 +65,17 @@ const projects = [
   {
     title: "Language Translator",
     description: "A web app to translate languages.",
-    image: translator,
+    image: transltor,
     link: "#",
     technologies: ["React", "Tailwind CSS"],
+    client: "Self-Project",
+  },
+  {
+    title: "Prep_point",
+    description: " web app for preparation — currently working on it..",
+    image: prep,
+    link: "#",
+    technologies: ["React", "Tailwind CSS", "Framer Motion"],
     client: "Self-Project",
   },
 ];
@@ -85,9 +94,11 @@ const ProjectSection = () => {
     <div className={show} id="projects">
       <section className="py-16 bg-zinc-800 min-h-screen text-white">
         <div className="container mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-8 flex items-center justify-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 pb-2 text-white flex items-center justify-center">
             <SiPolymerproject className="mr-2" />
-            My Projects
+            <span className="bg-clip-text text-transparent pb-3 bg-gradient-to-r from-blue-400 to-purple-500">
+              My Projects
+            </span>
           </h2>
           <div className="grid gap-12 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {projects.map((project) => (
