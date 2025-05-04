@@ -34,11 +34,9 @@ function Footer() {
   };
 
   const socialIcons = [
-    { icon: FaFacebook, link: "https://facebook.com", color: "#0DAFFF" },
-    { icon: FaTwitter, link: "https://twitter.com", color: "#55BCFF" },
     { icon: FaInstagram, link: "https://instagram.com", color: "#E40081" },
-    { icon: FaLinkedin, link: "https://linkedin.com", color: "#006FFF" },
-    { icon: FaGithub, link: "https://github.com", color: "#332D2D" },
+    { icon: FaLinkedin, link: "https://www.linkedin.com/in/manpreet-singh-ab1b49220/", color: "#006FFF" },
+    { icon: FaGithub, link: "https://github.com/manpreetkhandwal", color: "#332D2D" },
   ];
 
   if (!showFooter) return null;
