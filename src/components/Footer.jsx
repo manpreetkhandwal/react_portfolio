@@ -96,7 +96,7 @@ function Footer() {
             <div className="space-y-3">
               <div className="flex items-center justify-center md:justify-start gap-2">
                 <FaPhoneAlt />
-                <a href="tel:+91XXXXXXXXXX" className="hover:underline">+91XXXXXXXXXX</a>
+                <a href="tel:+919814220280" className="hover:underline">+91981420XXXXX</a>
               </div>
               <div className="flex items-center justify-center md:justify-start gap-2">
                 <IoMail />
